@@ -2,72 +2,86 @@ package com.example.tarefa3;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 
 public class CarrosController {
 
-    // Campos de texto para entrada de dados
     @FXML
     private TextField marcaField;
+
     @FXML
     private TextField modeloField;
+
     @FXML
     private TextField anoField;
 
-    // Botão de salvar
     @FXML
-    private Button salvarButton;
+    private TableView<Carros> tabelaCarros;
 
-    // Tabela para exibir os carros cadastrados
     @FXML
-    private TableView<Carros> tableView;
+    private TableColumn<Carros, String> colunaMarca;
 
-    // Colunas da tabela
     @FXML
-    private TableColumn<Carros, String> marcaColumn;
-    @FXML
-    private TableColumn<Carros, String> modeloColumn;
-    @FXML
-    private TableColumn<Carros, Integer> anoColumn;
+    private TableColumn<Carros, String> colunaModelo;
 
-    // Lista observável para armazenar os carros
-    private ObservableList<Carros> carros = FXCollections.observableArrayList();
+    @FXML
+    private TableColumn<Carros, Integer> colunaAno;
 
-    // Método de inicialização
+    private ObservableList<Carros> listaCarros;
+
     @FXML
     public void initialize() {
         // Configurar as colunas da tabela
-        marcaColumn.setCellValueFactory(new PropertyValueFactory<>("marca"));
-        modeloColumn.setCellValueFactory(new PropertyValueFactory<>("modelo"));
-        anoColumn.setCellValueFactory(new PropertyValueFactory<>("ano"));
+        colunaMarca.setCellValueFactory(new PropertyValueFactory<>("marca"));
+        colunaModelo.setCellValueFactory(new PropertyValueFactory<>("modelo"));
+        colunaAno.setCellValueFactory(new PropertyValueFactory<>("ano"));
 
-        // Vincular a lista observável à tabela
-        tableView.setItems(carros);
-
-        // Configurar a ação do botão "Salvar"
-        salvarButton.setOnAction(e -> salvarCarro());
+        // Inicializar a lista de carros e vinculá-la à tabela
+        listaCarros = FXCollections.observableArrayList(CarrosRepository.getCarros());
+        tabelaCarros.setItems(listaCarros);
     }
 
-    // Método para salvar um carro
-    private void salvarCarro() {
-        // Obter os valores dos campos de texto
-        String marca = marcaField.getText();
-        String modelo = modeloField.getText();
-        String ano = anoField.getText();
+    @FXML
+    public void salvarCarro() {
+        try {
+            String marca = marcaField.getText();
+            String modelo = modeloField.getText();
+            String ano =anoField.getText();
 
-        // Criar um novo objeto Carro e adicioná-lo à lista
-        Carros novoCarro = new Carros(marca, modelo, ano);
-        carros.add(novoCarro);
+            // Criar um novo carro e adicionar à lista e ao repositório
+            Carros novoCarro = new Carros(marca, modelo, ano);
+            CarrosRepository.adicionar(novoCarro);
+            listaCarros.add(novoCarro);
 
-        // Limpar os campos de texto
-        marcaField.clear();
-        modeloField.clear();
-        anoField.clear();
+            // Limpar os campos após salvar
+            marcaField.clear();
+            modeloField.clear();
+            anoField.clear();
+        } catch (NumberFormatException e) {
+            // Tratar caso o campo "ano" seja inválido
+            System.out.println("Erro: Ano inválido.");
+        }
+    }
+
+    @FXML
+    public void voltarMenu(ActionEvent event) throws IOException {
+        // Voltar para o menu principal
+        Parent menuRoot = FXMLLoader.load(getClass().getResource("/MenuPrincipal.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(menuRoot);
+        stage.setScene(scene);
+        stage.show();
     }
 }

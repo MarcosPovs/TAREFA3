@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tarefa3.MenuPrincipalController">
+   <AnchorPane fx:id="anchorlogin" prefHeight="612.0" prefWidth="817.0">
+      <children>
+         <Label fx:id="lblTxtSistemaPacer" contentDisplay="CENTER" layoutX="24.0" layoutY="26.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="48.0" prefWidth="770.0" text="TAREFA 3 - SISTEMA DE CADASTRO DE CARACTERÍSTICAS DE FIGURAS" textAlignment="CENTER">
+            <font>
+               <Font name="Arial Black" size="19.0" />
+            </font>
+         </Label>
+         <ImageView fx:id="imgFatec1" fitHeight="102.0" fitWidth="170.0" layoutX="617.0" layoutY="11.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
+            <image>
+               <Image url="@../../../../../../../API-FATEC-2-SEM.-2024/Cyber%20Nexus%20Pacer/Cyber%20Nexus%20-%20Pacer/src/main/resources/com/cyber/cybernexuspacer/IMAGENS_API/FATEC.png" />
+            </image>
+            <effect>
+               <ColorAdjust brightness="0.26" contrast="0.21" />
+            </effect>
+         </ImageView>
+          <Button layoutX="190.0" layoutY="242.0" onAction="#handleTela1" prefHeight="63.0" prefWidth="100.0" text="Tela 1" />
+          <Button layoutX="359.0" layoutY="242.0" onAction="#handleTela2" prefHeight="63.0" prefWidth="100.0" text="Tela 2" />
+          <Button layoutX="40.0" layoutY="242.0" onAction="#handleCarros" prefHeight="63.0" prefWidth="100.0" text="Carros" />
+      </children>
+   </AnchorPane>
+</VBox>
