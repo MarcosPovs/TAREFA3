@@ -19,15 +19,21 @@
          </Label>
          <ImageView fx:id="imgFatec1" fitHeight="102.0" fitWidth="170.0" layoutX="617.0" layoutY="11.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
             <image>
-               <Image url="@../../../../../../../API-FATEC-2-SEM.-2024/Cyber%20Nexus%20Pacer/Cyber%20Nexus%20-%20Pacer/src/main/resources/com/cyber/cybernexuspacer/IMAGENS_API/FATEC.png" />
             </image>
             <effect>
                <ColorAdjust brightness="0.26" contrast="0.21" />
             </effect>
          </ImageView>
-          <Button layoutX="190.0" layoutY="242.0" onAction="#handleTela1" prefHeight="63.0" prefWidth="100.0" text="Tela 1" />
-          <Button layoutX="359.0" layoutY="242.0" onAction="#handleTela2" prefHeight="63.0" prefWidth="100.0" text="Tela 2" />
-          <Button layoutX="40.0" layoutY="242.0" onAction="#handleCarros" prefHeight="63.0" prefWidth="100.0" text="Carros" />
+          <Button layoutX="33.0" layoutY="183.0" onAction="#handleCarros" prefHeight="34.0" prefWidth="752.0" text="CARROS" />
+         <Button layoutX="33.0" layoutY="96.0"  prefHeight="34.0" prefWidth="752.0" text="ANIMAIS" />
+         <Button layoutX="33.0" layoutY="227.0"  prefHeight="34.0" prefWidth="752.0" text="CLASSES RPG" />
+         <Button layoutX="33.0" layoutY="140.0"  prefHeight="34.0" prefWidth="752.0" text="CACHORROS" />
+         <Button layoutX="33.0" layoutY="358.0"  prefHeight="34.0" prefWidth="752.0" text="FRUTAS" />
+         <Button layoutX="33.0" layoutY="271.0"  prefHeight="34.0" prefWidth="752.0" text="ELETRONICOS" />
+         <Button layoutX="33.0" layoutY="402.0"  prefHeight="34.0" prefWidth="752.0" text="MOVEIS" />
+         <Button layoutX="33.0" layoutY="315.0"  prefHeight="34.0" prefWidth="752.0" text="ESTADOS" />
+         <Button layoutX="33.0" layoutY="447.0"  prefHeight="34.0" prefWidth="752.0" text="SALGADOS" />
+         <Button layoutX="33.0" layoutY="491.0"  prefHeight="34.0" prefWidth="752.0" text="TALHERES" />
       </children>
    </AnchorPane>
 </VBox>
