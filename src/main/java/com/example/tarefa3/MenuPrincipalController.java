@@ -25,8 +25,12 @@ public class MenuPrincipalController {
     }
 
     // Aqui você pode adicionar métodos semelhantes para os outros botões
-    public void handleTela1(ActionEvent event) {
-        // Carregar Tela 1
+    public void handleAnimais(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/animais_app.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
     public void handleTela2(ActionEvent event) {
         // Carregar Tela 2

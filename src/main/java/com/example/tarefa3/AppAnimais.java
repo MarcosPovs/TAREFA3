@@ -7,15 +7,15 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 
-public class AppCarros extends Application {
+public class AppAnimais extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
         // Carrega o arquivo FXML
-        Parent root = FXMLLoader.load(getClass().getResource("/carro_app.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/animais_app.fxml"));
 
         // Define o título da janela
-        primaryStage.setTitle("Cadastro de Carros");
+        primaryStage.setTitle("Cadastro de Animais");
 
         // Cria a cena com o layout definido no arquivo FXML
         Scene scene = new Scene(root);

@@ -25,7 +25,7 @@
             </effect>
          </ImageView>
           <Button layoutX="33.0" layoutY="183.0" onAction="#handleCarros" prefHeight="34.0" prefWidth="752.0" text="CARROS" />
-         <Button layoutX="33.0" layoutY="96.0"  prefHeight="34.0" prefWidth="752.0" text="ANIMAIS" />
+         <Button layoutX="33.0" layoutY="96.0"  onAction="#handleAnimais"  prefHeight="34.0" prefWidth="752.0" text="ANIMAIS" />
          <Button layoutX="33.0" layoutY="227.0"  prefHeight="34.0" prefWidth="752.0" text="CLASSES RPG" />
          <Button layoutX="33.0" layoutY="140.0"  prefHeight="34.0" prefWidth="752.0" text="CACHORROS" />
          <Button layoutX="33.0" layoutY="358.0"  prefHeight="34.0" prefWidth="752.0" text="FRUTAS" />
